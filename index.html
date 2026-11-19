@@ -52,6 +52,7 @@
     font-size:16px;
   }
   a{color:var(--gold-deep);text-decoration:none}
+  em,i,cite,dfn,var{font-style:normal}
 
   /* ---------------- TOP BAR ---------------- */
   .bar{
@@ -157,31 +158,17 @@
   .hero{
     position:relative;overflow:hidden;border-radius:22px;color:#fff;
     background:linear-gradient(150deg,#20466F 0%, var(--blue) 34%, var(--blue-2) 72%, #3A6CA6 100%);
-    padding:26px 24px 24px;box-shadow:0 16px 40px rgba(33,70,111,.24);margin-bottom:22px;
+    padding:24px 26px;box-shadow:0 16px 40px rgba(33,70,111,.24);margin-bottom:22px;
   }
   .hero::after{
     content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;
     background:radial-gradient(circle at 40% 40%, rgba(247,232,176,.16), rgba(247,232,176,0) 60%);
     pointer-events:none;
   }
-  .hero .eyebrow{
-    display:inline-block;font-size:11px;letter-spacing:.14em;font-weight:700;
-    color:#F7E8B0;background:rgba(247,232,176,.16);border:1px solid rgba(247,232,176,.45);
-    border-radius:999px;padding:4px 11px;margin-bottom:12px;
-  }
   .hero h1{
-    font-family:var(--sans);font-weight:600;margin:0 0 4px;
+    font-family:var(--sans);font-weight:600;margin:0;
     font-size:clamp(25px,4.2vw,36px);letter-spacing:-.01em;line-height:1.25;
   }
-  .hero .sub{font-size:13.5px;color:#D7E3F3;margin:0 0 14px;letter-spacing:.01em}
-  .hero .sub span{color:#F7E8B0}
-  .hero .hint{
-    display:flex;align-items:flex-start;gap:8px;font-size:12.8px;color:#E9F0F9;
-    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
-    border-radius:12px;padding:9px 12px;max-width:720px;line-height:1.55;
-  }
-  .hero .hint b{color:#FBE7A6;font-weight:700}
-  .hero .eyebrow{color:#F7E8B0}
 
   /* section */
   .sec{margin:34px 0 0;scroll-margin-top:calc(var(--hdr) + 12px)}
@@ -210,7 +197,7 @@
   }
   .item-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px;margin-bottom:2px}
   .item-head h4{margin:0;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
-  .item-head .tr{font-family:var(--sans);font-size:12px;color:var(--ink-faint);font-style:italic}
+  .item-head .tr{font-family:var(--sans);font-size:12px;color:var(--ink-faint)}
   .rubric{
     margin:5px 0 10px;font-size:12.4px;color:#254E7C;line-height:1.55;
     background:var(--blue-soft);border-radius:8px;padding:6px 10px;display:inline-block;
@@ -248,7 +235,7 @@
   .cell.en{color:#26313D}
   .cell.es{color:#333A48}
   .cell .langtag{display:none}
-  .cell em{font-style:italic;color:var(--ink-faint);font-size:.86em}
+  .cell em{font-style:normal;color:var(--ink-faint);font-size:.86em}
 
   .alts{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
   .alt-label{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--gold-deep);margin:0 0 5px 8px;text-transform:uppercase}
@@ -282,7 +269,6 @@
     :root{--role-w:0px}
     .page{padding:calc(var(--hdr) + 14px) 13px 56px}
     .hero{padding:20px 18px;border-radius:18px}
-    .hero .hint{font-size:12.2px}
     .item{padding:13px 12px 12px;border-radius:14px}
     .langhead{display:none}
     .line{grid-template-columns:1fr;gap:2px;padding:8px 10px}
@@ -319,12 +305,10 @@
     .lang-quick button{flex:1 1 0;min-width:0;padding:5px 4px;font-size:11.5px}
   }
   @media print{
-    .bar,.hero .hint,.foot .fine{display:none}
+    .bar,.foot .fine{display:none}
     body{background:#fff;font-size:11pt}
     .page{padding:0}
     .hero{color:#000;background:#fff;box-shadow:none;border-bottom:2px solid #000;border-radius:0;padding:0 0 10px}
-    .hero .eyebrow{color:#000;border-color:#999;background:none}
-    .hero .sub{color:#333}
     .item{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
     .line.a{background:#FBF4DF !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   }
@@ -381,13 +365,7 @@
 
 <main class="page">
   <section class="hero">
-    <span class="eyebrow">2027. 3. 28 부활 대축일 · 바르셀로나</span>
     <h1>미사 통상문</h1>
-    <p class="sub">한국어 · <span>English</span> · <span>Español</span> — 사제(P)와 회중(모두)의 몫을 나누어 대조했습니다.</p>
-    <div class="hint">
-      <span style="font-size:14px;line-height:1.4">✝</span>
-      <span>연노란 바탕의 <b>‘모두’</b> 줄이 회중이 함께 읽고 응답하는 부분입니다. 위의 <b>한 · EN · ES</b> 버튼으로 원하는 언어를 하나씩 켜고 끌 수 있어요. <b>보기 설정</b>에서 글씨도 키울 수 있습니다.</span>
-    </div>
   </section>
 
   <div id="content"></div>
