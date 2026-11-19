@@ -158,9 +158,9 @@
   .hero{
     position:relative;overflow:hidden;border-radius:22px;color:#fff;
     background:linear-gradient(150deg,#20466F 0%, var(--blue) 34%, var(--blue-2) 72%, #3A6CA6 100%);
-    padding:28px 26px 30px;box-shadow:0 16px 40px rgba(33,70,111,.24);margin-bottom:22px;
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;gap:12px;
+    padding:34px 40px;box-shadow:0 16px 40px rgba(33,70,111,.24);margin-bottom:22px;
+    display:flex;flex-direction:row;align-items:center;justify-content:center;
+    text-align:left;
   }
   .hero::after{
     content:"";position:absolute;left:50%;top:-210px;width:760px;height:760px;border-radius:50%;
@@ -168,16 +168,44 @@
     background:radial-gradient(circle at 50% 45%, rgba(247,232,176,.16), rgba(247,232,176,0) 60%);
     pointer-events:none;
   }
-  .hero h1{
-    font-family:var(--sans);font-weight:600;margin:0;
-    font-size:clamp(25px,4.2vw,36px);letter-spacing:-.01em;line-height:1.25;
-    position:relative;z-index:1;
+  .hero-bg{position:absolute;inset:0;pointer-events:none;z-index:0}
+  .hero-rose{
+    position:absolute;display:block;left:50%;top:50%;width:258px;height:258px;
+    transform:translate(-50%,-50%);opacity:.105;
   }
   .hero-emblem{
-    flex:0 0 auto;display:block;height:220px;width:auto;
+    flex:0 0 auto;display:block;height:clamp(124px,18vw,208px);width:auto;
+    margin-left:clamp(0px,2.2vw,26px);
     position:relative;z-index:1;overflow:visible;
     filter:drop-shadow(0 6px 18px rgba(247,232,176,.10));
   }
+  .hero-text{
+    position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;
+    margin-left:clamp(34px,7.7vw,92px);min-width:0;
+  }
+  .hero-text::before{
+    content:"";position:absolute;left:calc(-1 * clamp(17px,3.7vw,44px));top:0;bottom:0;width:1px;
+    background:linear-gradient(180deg,rgba(247,232,176,0),rgba(247,232,176,.38) 22%,rgba(247,232,176,.38) 78%,rgba(247,232,176,0));
+  }
+  .hero h1{
+    font-family:var(--sans);font-weight:600;margin:0;
+    font-size:clamp(26px,3.35vw,40px);letter-spacing:-.01em;line-height:1.25;
+  }
+  .hero-sub{
+    margin:11px 0 0;font-weight:500;line-height:1.5;white-space:nowrap;
+    font-size:clamp(9px,.96vw,11.5px);letter-spacing:.2em;text-indent:.2em;
+    color:rgba(255,255,255,.74);text-transform:uppercase;
+  }
+  .hero-latin{
+    margin:15px 0 0;font-weight:400;line-height:1.5;
+    font-size:clamp(10.5px,1.09vw,13px);letter-spacing:.03em;color:#F1E3B8;
+    display:flex;align-items:center;gap:12px;
+  }
+  .hero-latin .rule{
+    display:none;height:1px;width:34px;
+    background:linear-gradient(90deg,rgba(247,232,176,0),rgba(247,232,176,.5));
+  }
+  .hero-latin .rule.r{background:linear-gradient(270deg,rgba(247,232,176,0),rgba(247,232,176,.5))}
 
   /* section */
   .sec{margin:34px 0 0;scroll-margin-top:calc(var(--hdr) + 12px)}
@@ -277,8 +305,15 @@
   @media (max-width:760px){
     :root{--role-w:0px}
     .page{padding:calc(var(--hdr) + 14px) 13px 56px}
-    .hero{padding:20px 18px 22px;border-radius:18px;gap:10px}
-    .hero-emblem{height:150px}
+    .hero{padding:22px 18px 24px;border-radius:18px;flex-direction:column;text-align:center}
+    .hero-emblem{height:clamp(112px,28vw,152px);margin-left:0}
+    .hero-text{align-items:center;margin-left:0}
+    .hero-text::before{display:none}
+    .hero h1{font-size:clamp(25px,7vw,27px)}
+    .hero-sub{font-size:9px;letter-spacing:.15em;text-indent:.15em;margin-top:9px}
+    .hero-latin{font-size:11.5px;letter-spacing:.02em;margin-top:13px;gap:9px}
+    .hero-latin .rule{display:block;width:20px}
+    .hero-rose{opacity:.07}
     .item{padding:13px 12px 12px;border-radius:14px}
     .langhead{display:none}
     .line{grid-template-columns:1fr;gap:2px;padding:8px 10px}
@@ -319,7 +354,9 @@
     body{background:#fff;font-size:11pt}
     .page{padding:0}
     .hero{color:#000;background:#fff;box-shadow:none;border-bottom:2px solid #000;border-radius:0;padding:0 0 10px}
-    .hero-emblem{display:none}
+    .hero-emblem,.hero-bg,.hero-text::before{display:none}
+    .hero-sub{color:#000}
+    .hero-latin{color:#000}
     .item{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
     .line.a{background:#FBF4DF !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   }
@@ -376,6 +413,102 @@
 
 <main class="page">
   <section class="hero">
+    <div class="hero-bg"><svg class="hero-rose" viewBox="-250 -250 500 500" fill="none" aria-hidden="true"><g fill="none" stroke="#F7E8B0" stroke-width="1.0" stroke-linecap="round" stroke-linejoin="round">
+<circle cx="0" cy="0" r="250.00"/>
+<circle cx="0" cy="0" r="215.00"/>
+<circle cx="0" cy="0" r="140.00"/>
+<circle cx="0" cy="0" r="70.00"/>
+<line x1="70.00" y1="0.00" x2="215.00" y2="0.00"/>
+<line x1="215.00" y1="0.00" x2="250.00" y2="0.00"/>
+<line x1="64.67" y1="26.79" x2="198.63" y2="82.28"/>
+<line x1="198.63" y1="82.28" x2="230.97" y2="95.67"/>
+<line x1="49.50" y1="49.50" x2="152.03" y2="152.03"/>
+<line x1="152.03" y1="152.03" x2="176.78" y2="176.78"/>
+<line x1="26.79" y1="64.67" x2="82.28" y2="198.63"/>
+<line x1="82.28" y1="198.63" x2="95.67" y2="230.97"/>
+<line x1="0.00" y1="70.00" x2="0.00" y2="215.00"/>
+<line x1="0.00" y1="215.00" x2="0.00" y2="250.00"/>
+<line x1="-26.79" y1="64.67" x2="-82.28" y2="198.63"/>
+<line x1="-82.28" y1="198.63" x2="-95.67" y2="230.97"/>
+<line x1="-49.50" y1="49.50" x2="-152.03" y2="152.03"/>
+<line x1="-152.03" y1="152.03" x2="-176.78" y2="176.78"/>
+<line x1="-64.67" y1="26.79" x2="-198.63" y2="82.28"/>
+<line x1="-198.63" y1="82.28" x2="-230.97" y2="95.67"/>
+<line x1="-70.00" y1="0.00" x2="-215.00" y2="0.00"/>
+<line x1="-215.00" y1="0.00" x2="-250.00" y2="0.00"/>
+<line x1="-64.67" y1="-26.79" x2="-198.63" y2="-82.28"/>
+<line x1="-198.63" y1="-82.28" x2="-230.97" y2="-95.67"/>
+<line x1="-49.50" y1="-49.50" x2="-152.03" y2="-152.03"/>
+<line x1="-152.03" y1="-152.03" x2="-176.78" y2="-176.78"/>
+<line x1="-26.79" y1="-64.67" x2="-82.28" y2="-198.63"/>
+<line x1="-82.28" y1="-198.63" x2="-95.67" y2="-230.97"/>
+<line x1="-0.00" y1="-70.00" x2="-0.00" y2="-215.00"/>
+<line x1="-0.00" y1="-215.00" x2="-0.00" y2="-250.00"/>
+<line x1="26.79" y1="-64.67" x2="82.28" y2="-198.63"/>
+<line x1="82.28" y1="-198.63" x2="95.67" y2="-230.97"/>
+<line x1="49.50" y1="-49.50" x2="152.03" y2="-152.03"/>
+<line x1="152.03" y1="-152.03" x2="176.78" y2="-176.78"/>
+<line x1="64.67" y1="-26.79" x2="198.63" y2="-82.28"/>
+<line x1="198.63" y1="-82.28" x2="230.97" y2="-95.67"/>
+<path d="M143.31 11.28 L193.15 15.20 Q213.09 16.77 209.64 41.70 Q203.29 66.05 184.27 59.87 L136.71 44.42 Z"/>
+<path d="M76.01 5.98 L110.91 8.73 Q137.57 10.83 135.35 26.92 Q131.25 42.64 105.81 34.38 L72.52 23.56 Z"/>
+<circle cx="228.03" cy="45.36" r="10.50"/>
+<path d="M128.08 65.26 L172.63 87.96 Q190.45 97.04 177.73 118.75 Q162.54 138.82 147.33 125.83 L109.31 93.36 Z"/>
+<path d="M67.94 34.62 L99.12 50.51 Q122.96 62.65 114.74 76.67 Q104.94 89.62 84.60 72.25 L57.98 49.52 Z"/>
+<circle cx="193.32" cy="129.17" r="10.50"/>
+<path d="M93.36 109.31 L125.83 147.33 Q138.82 162.54 118.75 177.73 Q97.04 190.45 87.96 172.63 L65.26 128.08 Z"/>
+<path d="M49.52 57.98 L72.25 84.60 Q89.62 104.94 76.67 114.74 Q62.65 122.96 50.51 99.12 L34.62 67.94 Z"/>
+<circle cx="129.17" cy="193.32" r="10.50"/>
+<path d="M44.42 136.71 L59.87 184.27 Q66.05 203.29 41.70 209.64 Q16.77 213.09 15.20 193.15 L11.28 143.31 Z"/>
+<path d="M23.56 72.52 L34.38 105.81 Q42.64 131.25 26.92 135.35 Q10.83 137.57 8.73 110.91 L5.98 76.01 Z"/>
+<circle cx="45.36" cy="228.03" r="10.50"/>
+<path d="M-11.28 143.31 L-15.20 193.15 Q-16.77 213.09 -41.70 209.64 Q-66.05 203.29 -59.87 184.27 L-44.42 136.71 Z"/>
+<path d="M-5.98 76.01 L-8.73 110.91 Q-10.83 137.57 -26.92 135.35 Q-42.64 131.25 -34.38 105.81 L-23.56 72.52 Z"/>
+<circle cx="-45.36" cy="228.03" r="10.50"/>
+<path d="M-65.26 128.08 L-87.96 172.63 Q-97.04 190.45 -118.75 177.73 Q-138.82 162.54 -125.83 147.33 L-93.36 109.31 Z"/>
+<path d="M-34.62 67.94 L-50.51 99.12 Q-62.65 122.96 -76.67 114.74 Q-89.62 104.94 -72.25 84.60 L-49.52 57.98 Z"/>
+<circle cx="-129.17" cy="193.32" r="10.50"/>
+<path d="M-109.31 93.36 L-147.33 125.83 Q-162.54 138.82 -177.73 118.75 Q-190.45 97.04 -172.63 87.96 L-128.08 65.26 Z"/>
+<path d="M-57.98 49.52 L-84.60 72.25 Q-104.94 89.62 -114.74 76.67 Q-122.96 62.65 -99.12 50.51 L-67.94 34.62 Z"/>
+<circle cx="-193.32" cy="129.17" r="10.50"/>
+<path d="M-136.71 44.42 L-184.27 59.87 Q-203.29 66.05 -209.64 41.70 Q-213.09 16.77 -193.15 15.20 L-143.31 11.28 Z"/>
+<path d="M-72.52 23.56 L-105.81 34.38 Q-131.25 42.64 -135.35 26.92 Q-137.57 10.83 -110.91 8.73 L-76.01 5.98 Z"/>
+<circle cx="-228.03" cy="45.36" r="10.50"/>
+<path d="M-143.31 -11.28 L-193.15 -15.20 Q-213.09 -16.77 -209.64 -41.70 Q-203.29 -66.05 -184.27 -59.87 L-136.71 -44.42 Z"/>
+<path d="M-76.01 -5.98 L-110.91 -8.73 Q-137.57 -10.83 -135.35 -26.92 Q-131.25 -42.64 -105.81 -34.38 L-72.52 -23.56 Z"/>
+<circle cx="-228.03" cy="-45.36" r="10.50"/>
+<path d="M-128.08 -65.26 L-172.63 -87.96 Q-190.45 -97.04 -177.73 -118.75 Q-162.54 -138.82 -147.33 -125.83 L-109.31 -93.36 Z"/>
+<path d="M-67.94 -34.62 L-99.12 -50.51 Q-122.96 -62.65 -114.74 -76.67 Q-104.94 -89.62 -84.60 -72.25 L-57.98 -49.52 Z"/>
+<circle cx="-193.32" cy="-129.17" r="10.50"/>
+<path d="M-93.36 -109.31 L-125.83 -147.33 Q-138.82 -162.54 -118.75 -177.73 Q-97.04 -190.45 -87.96 -172.63 L-65.26 -128.08 Z"/>
+<path d="M-49.52 -57.98 L-72.25 -84.60 Q-89.62 -104.94 -76.67 -114.74 Q-62.65 -122.96 -50.51 -99.12 L-34.62 -67.94 Z"/>
+<circle cx="-129.17" cy="-193.32" r="10.50"/>
+<path d="M-44.42 -136.71 L-59.87 -184.27 Q-66.05 -203.29 -41.70 -209.64 Q-16.77 -213.09 -15.20 -193.15 L-11.28 -143.31 Z"/>
+<path d="M-23.56 -72.52 L-34.38 -105.81 Q-42.64 -131.25 -26.92 -135.35 Q-10.83 -137.57 -8.73 -110.91 L-5.98 -76.01 Z"/>
+<circle cx="-45.36" cy="-228.03" r="10.50"/>
+<path d="M11.28 -143.31 L15.20 -193.15 Q16.77 -213.09 41.70 -209.64 Q66.05 -203.29 59.87 -184.27 L44.42 -136.71 Z"/>
+<path d="M5.98 -76.01 L8.73 -110.91 Q10.83 -137.57 26.92 -135.35 Q42.64 -131.25 34.38 -105.81 L23.56 -72.52 Z"/>
+<circle cx="45.36" cy="-228.03" r="10.50"/>
+<path d="M65.26 -128.08 L87.96 -172.63 Q97.04 -190.45 118.75 -177.73 Q138.82 -162.54 125.83 -147.33 L93.36 -109.31 Z"/>
+<path d="M34.62 -67.94 L50.51 -99.12 Q62.65 -122.96 76.67 -114.74 Q89.62 -104.94 72.25 -84.60 L49.52 -57.98 Z"/>
+<circle cx="129.17" cy="-193.32" r="10.50"/>
+<path d="M109.31 -93.36 L147.33 -125.83 Q162.54 -138.82 177.73 -118.75 Q190.45 -97.04 172.63 -87.96 L128.08 -65.26 Z"/>
+<path d="M57.98 -49.52 L84.60 -72.25 Q104.94 -89.62 114.74 -76.67 Q122.96 -62.65 99.12 -50.51 L67.94 -34.62 Z"/>
+<circle cx="193.32" cy="-129.17" r="10.50"/>
+<path d="M136.71 -44.42 L184.27 -59.87 Q203.29 -66.05 209.64 -41.70 Q213.09 -16.77 193.15 -15.20 L143.31 -11.28 Z"/>
+<path d="M72.52 -23.56 L105.81 -34.38 Q131.25 -42.64 135.35 -26.92 Q137.57 -10.83 110.91 -8.73 L76.01 -5.98 Z"/>
+<circle cx="228.03" cy="-45.36" r="10.50"/>
+<circle cx="0" cy="0" r="36.25"/>
+<circle cx="36.25" cy="0.00" r="13.00"/>
+<circle cx="25.63" cy="25.63" r="13.00"/>
+<circle cx="0.00" cy="36.25" r="13.00"/>
+<circle cx="-25.63" cy="25.63" r="13.00"/>
+<circle cx="-36.25" cy="0.00" r="13.00"/>
+<circle cx="-25.63" cy="-25.63" r="13.00"/>
+<circle cx="-0.00" cy="-36.25" r="13.00"/>
+<circle cx="25.63" cy="-25.63" r="13.00"/>
+<circle cx="0" cy="0" r="13.75"/>
+</g></svg></div>
     <svg class="hero-emblem" viewBox="0 0 156 208" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><radialGradient id="hg" cx="50%" cy="34%" r="50%"><stop offset="0" stop-color="#F7E8B0" stop-opacity=".15"/><stop offset="55%" stop-color="#F7E8B0" stop-opacity=".05"/><stop offset="100%" stop-color="#F7E8B0" stop-opacity="0"/></radialGradient></defs><circle cx="78" cy="71.5" r="74" fill="url(#hg)"/>
     <g fill="#F7E8B0" opacity=".72">
     <path d="M79.6 41.5 L78 9.5 L76.4 41.5 Z"/>
@@ -471,7 +604,11 @@
     </g>
     <circle cx="78" cy="142.4" r="1.1" fill="#F7E8B0" stroke="none" opacity=".85"/>
     </g></svg>
-    <h1>미사 통상문</h1>
+    <div class="hero-text">
+      <h1>미사 통상문</h1>
+      <p class="hero-sub">ORDER OF THE MASS · ORDEN DE LA MISA</p>
+      <p class="hero-latin"><span class="rule"></span>Sursum corda · 마음을 드높이<span class="rule r"></span></p>
+    </div>
   </section>
 
   <div id="content"></div>
