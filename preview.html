@@ -1,9 +1,10 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><title>mobile preview</title>
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><title>preview: mobile + desktop</title>
 <style>body{margin:0;background:#dfe5ee;font-family:sans-serif}
-.wrap{display:flex;gap:24px;padding:20px}
+.wrap{display:flex;gap:20px;padding:16px;align-items:flex-start}
 .frame{background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.2);border-radius:12px;overflow:hidden}
-.cap{font-size:12px;padding:6px 2px;color:#334}
+.cap{font-size:12px;padding:4px 2px;color:#334;font-weight:700}
 iframe{display:block;border:0}</style></head><body>
 <div class="wrap">
-<div><div class="cap">iPhone 390 x 844</div><div class="frame"><iframe src="index.html?v=marian1" width="390" height="844"></iframe></div></div>
+<div><div class="cap">Mobile 390 x 844</div><div class="frame"><iframe id="mob" src="index.html?v=marian1c" width="390" height="844"></iframe></div></div>
+<div><div class="cap">Desktop 1180 x 844</div><div class="frame"><iframe id="desk" src="index.html?v=marian1c" width="1180" height="844"></iframe></div></div>
 </div></body></html>
