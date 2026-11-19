@@ -158,14 +158,14 @@
   .hero{
     position:relative;overflow:hidden;border-radius:22px;color:#fff;
     background:linear-gradient(150deg,#20466F 0%, var(--blue) 34%, var(--blue-2) 72%, #3A6CA6 100%);
-    padding:22px 26px 24px;box-shadow:0 16px 40px rgba(33,70,111,.24);margin-bottom:22px;
+    padding:28px 26px 30px;box-shadow:0 16px 40px rgba(33,70,111,.24);margin-bottom:22px;
     display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;gap:10px;
+    text-align:center;gap:12px;
   }
   .hero::after{
-    content:"";position:absolute;left:50%;top:-150px;width:520px;height:520px;border-radius:50%;
+    content:"";position:absolute;left:50%;top:-210px;width:760px;height:760px;border-radius:50%;
     transform:translateX(-50%);
-    background:radial-gradient(circle at 50% 45%, rgba(247,232,176,.15), rgba(247,232,176,0) 62%);
+    background:radial-gradient(circle at 50% 45%, rgba(247,232,176,.16), rgba(247,232,176,0) 60%);
     pointer-events:none;
   }
   .hero h1{
@@ -174,8 +174,9 @@
     position:relative;z-index:1;
   }
   .hero-emblem{
-    flex:0 0 auto;display:block;height:100px;width:auto;
+    flex:0 0 auto;display:block;height:220px;width:auto;
     position:relative;z-index:1;overflow:visible;
+    filter:drop-shadow(0 6px 18px rgba(247,232,176,.10));
   }
 
   /* section */
@@ -276,8 +277,8 @@
   @media (max-width:760px){
     :root{--role-w:0px}
     .page{padding:calc(var(--hdr) + 14px) 13px 56px}
-    .hero{padding:18px 18px 20px;border-radius:18px;gap:8px}
-    .hero-emblem{height:60px}
+    .hero{padding:20px 18px 22px;border-radius:18px;gap:10px}
+    .hero-emblem{height:150px}
     .item{padding:13px 12px 12px;border-radius:14px}
     .langhead{display:none}
     .line{grid-template-columns:1fr;gap:2px;padding:8px 10px}
@@ -404,23 +405,23 @@
     <path d="M107.86 74.49 L117.9 74.29 L107.99 72.69 Z"/>
     </g>
     <g stroke="#F7E8B0" stroke-linecap="round" fill="none">
-    <path d="M78 41.5 L78 0" stroke-width="0.70" opacity=".52"/>
-    <path d="M76.43 41.54 L74.96 13.58" stroke-width="0.54" opacity=".52"/>
-    <path d="M79.57 41.54 L81.04 13.58" stroke-width="0.54" opacity=".52"/>
-    <path d="M70.74 42.39 L62.03 7.46" stroke-width="0.62" opacity=".52"/>
-    <path d="M85.26 42.39 L93.97 7.46" stroke-width="0.62" opacity=".52"/>
-    <path d="M48 71.5 L18 71.5" stroke-width="0.62" opacity=".52"/>
-    <path d="M108 71.5 L138 71.5" stroke-width="0.62" opacity=".52"/>
-    <path d="M48.29 75.68 L26.51 78.74" stroke-width="0.54" opacity=".52"/>
-    <path d="M107.71 75.68 L129.49 78.74" stroke-width="0.54" opacity=".52"/>
-    <path d="M63 45.52 L46 16.07" stroke-width="0.54" opacity=".52"/>
-    <path d="M93 45.52 L110 16.07" stroke-width="0.54" opacity=".52"/>
-    <path d="M52.56 55.6 L28.81 40.76" stroke-width="0.54" opacity=".52"/>
-    <path d="M103.44 55.6 L127.19 40.76" stroke-width="0.54" opacity=".52"/>
-    <path d="M49.16 63.23 L29.94 57.72" stroke-width="0.46" opacity=".52"/>
-    <path d="M106.84 63.23 L126.06 57.72" stroke-width="0.46" opacity=".52"/>
-    <path d="M67.74 43.31 L60.9 24.52" stroke-width="0.46" opacity=".52"/>
-    <path d="M88.26 43.31 L95.1 24.52" stroke-width="0.46" opacity=".52"/>
+    <path d="M78 41.5 L78 0" stroke-width="0.35" opacity=".52"/>
+    <path d="M76.43 41.54 L74.96 13.58" stroke-width="0.27" opacity=".52"/>
+    <path d="M79.57 41.54 L81.04 13.58" stroke-width="0.27" opacity=".52"/>
+    <path d="M70.74 42.39 L62.03 7.46" stroke-width="0.31" opacity=".52"/>
+    <path d="M85.26 42.39 L93.97 7.46" stroke-width="0.31" opacity=".52"/>
+    <path d="M48 71.5 L18 71.5" stroke-width="0.31" opacity=".52"/>
+    <path d="M108 71.5 L138 71.5" stroke-width="0.31" opacity=".52"/>
+    <path d="M48.29 75.68 L26.51 78.74" stroke-width="0.27" opacity=".52"/>
+    <path d="M107.71 75.68 L129.49 78.74" stroke-width="0.27" opacity=".52"/>
+    <path d="M63 45.52 L46 16.07" stroke-width="0.27" opacity=".52"/>
+    <path d="M93 45.52 L110 16.07" stroke-width="0.27" opacity=".52"/>
+    <path d="M52.56 55.6 L28.81 40.76" stroke-width="0.27" opacity=".52"/>
+    <path d="M103.44 55.6 L127.19 40.76" stroke-width="0.27" opacity=".52"/>
+    <path d="M49.16 63.23 L29.94 57.72" stroke-width="0.23" opacity=".52"/>
+    <path d="M106.84 63.23 L126.06 57.72" stroke-width="0.23" opacity=".52"/>
+    <path d="M67.74 43.31 L60.9 24.52" stroke-width="0.23" opacity=".52"/>
+    <path d="M88.26 43.31 L95.1 24.52" stroke-width="0.23" opacity=".52"/>
     </g>
     <g fill="#F7E8B0" opacity=".55">
     <circle cx="60.1" cy="31.3" r=".8"/>
@@ -434,16 +435,16 @@
     </g>
     
     <g stroke="#F7E8B0" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="78" cy="71.5" r="26" stroke-width="2.2" opacity=".97"/>
-    <circle cx="78" cy="71.5" r="23.4" stroke-width="1.1" opacity=".5"/>
-    <g stroke-width="2.2"><path d="M78 56 L78 87"/><path d="M60 71.5 L96 71.5"/></g>
-    <g stroke-width="1.4" opacity=".9">
+    <circle cx="78" cy="71.5" r="26" stroke-width="1.1" opacity=".97"/>
+    <circle cx="78" cy="71.5" r="23.4" stroke-width="0.55" opacity=".5"/>
+    <g stroke-width="1.1"><path d="M78 56 L78 87"/><path d="M60 71.5 L96 71.5"/></g>
+    <g stroke-width="0.7" opacity=".9">
     <path d="M78 52.6 C 79.8 55.5, 79.8 57.6, 78 59.3 C 76.2 57.6, 76.2 55.5, 78 52.6 Z"/>
     <path d="M78 90.4 C 79.8 87.5, 79.8 85.4, 78 83.7 C 76.2 85.4, 76.2 87.5, 78 90.4 Z"/>
     <path d="M57 71.5 C 59.9 69.7, 62.1 69.7, 63.9 71.5 C 62.1 73.3, 59.9 73.3, 57 71.5 Z"/>
     <path d="M99 71.5 C 96.1 73.3, 93.9 73.3, 92.1 71.5 C 93.9 69.7, 96.1 69.7, 99 71.5 Z"/>
     </g>
-    <g stroke-width="2.2">
+    <g stroke-width="1.1">
     <ellipse cx="78" cy="110" rx="30" ry="6.2"/>
     <path d="M48 110 C 48.6 126, 58 139.4, 74 144"/>
     <path d="M108 110 C 107.4 126, 98 139.4, 82 144"/>
@@ -457,13 +458,13 @@
     <path d="M81.2 184 C 91 187.6, 101.4 191.4, 105 195.4"/>
     <ellipse cx="78" cy="196.8" rx="26.8" ry="10.4"/>
     </g>
-    <g stroke-width="1.15" opacity=".55">
+    <g stroke-width="0.57" opacity=".55">
     <ellipse cx="78" cy="111.4" rx="26.8" ry="4.6"/>
     <ellipse cx="78" cy="196.8" rx="23.2" ry="7.6"/>
     <path d="M76.6 185.2 C 67.2 188.6, 57.2 192, 53.6 195.6"/>
     <path d="M79.4 185.2 C 88.8 188.6, 98.8 192, 102.4 195.6"/>
     </g>
-    <g stroke-width="1.8">
+    <g stroke-width="0.9">
     <path d="M78 139 C 75.2 133, 75.2 124, 78 117.6 C 80.8 124, 80.8 133, 78 139 Z"/>
     <path d="M78 139 C 72.6 137.2, 68.2 132.4, 66 125.8 C 71.6 127.4, 75.8 132, 78 139 Z"/>
     <path d="M78 139 C 83.4 137.2, 87.8 132.4, 90 125.8 C 84.4 127.4, 80.2 132, 78 139 Z"/>
