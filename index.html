@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#234B7A">
 <meta name="robots" content="noindex, nofollow">
 <title>미사 통상문 · Order of the Mass · Orden de la Misa</title>
 <meta name="description" content="한국어·영어·스페인어로 보는 가톨릭 미사통상문 — 사제와 회중의 몫을 나누어 대조한 대시보드">
@@ -11,21 +12,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;1,400&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#F7F7F1;
+    --bg:#F6F8FC;
     --card:#FFFFFF;
-    --ink:#2B2E28;
-    --ink-soft:#5E6258;
-    --ink-faint:#8A8E82;
-    --olive:#4A5838;
-    --olive-2:#5B6B45;
-    --olive-soft:#EEF1E8;
-    --rose:#B5656A;
-    --rose-2:#C4777B;
-    --rose-deep:#8F4A52;
-    --rose-soft:#FAEFEF;
-    --line:#E3E4D9;
-    --line-soft:#F0F1EA;
-    --shadow:0 1px 2px rgba(74,88,56,.04), 0 10px 28px rgba(74,88,56,.06);
+    --ink:#1F2A38;
+    --ink-soft:#54637A;
+    --ink-faint:#8391A4;
+    --blue:#234B7A;
+    --blue-2:#2E5E96;
+    --blue-soft:#EBF2FA;
+    --gold:#B8922E;
+    --gold-2:#C9A43B;
+    --gold-deep:#7A5C12;
+    --gold-soft:#FDF6DC;
+    --line:#DDE6F1;
+    --line-soft:#EDF2F9;
+    --shadow:0 1px 2px rgba(35,75,122,.05), 0 10px 28px rgba(35,75,122,.07);
     --radius:16px;
     --sans:"Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", Roboto, sans-serif;
     --serif:"Noto Serif", "Noto Serif KR", Georgia, "Times New Roman", serif;
@@ -41,19 +42,19 @@
     font-family:var(--sans);
     color:var(--ink);
     background:
-      radial-gradient(1100px 520px at 12% -8%, #F1F2E6 0%, rgba(241,242,230,0) 62%),
-      radial-gradient(820px 460px at 96% 2%, #F6EDEC 0%, rgba(246,237,236,0) 58%),
+      radial-gradient(1100px 520px at 12% -8%, #E7EFF9 0%, rgba(231,239,249,0) 62%),
+      radial-gradient(820px 460px at 96% 2%, #FBF3DD 0%, rgba(251,243,221,0) 58%),
       var(--bg);
     line-height:1.62;
     -webkit-font-smoothing:antialiased;
     font-size:16px;
   }
-  a{color:var(--rose-deep);text-decoration:none}
+  a{color:var(--gold-deep);text-decoration:none}
 
   /* ---------------- TOP BAR ---------------- */
   .bar{
     position:fixed;top:0;left:0;right:0;z-index:60;
-    background:rgba(247,247,241,.93);
+    background:rgba(246,248,252,.93);
     -webkit-backdrop-filter:saturate(160%) blur(14px);
     backdrop-filter:saturate(160%) blur(14px);
     border-bottom:1px solid var(--line);
@@ -65,20 +66,20 @@
   .brand{display:flex;align-items:center;gap:8px;min-width:0;flex:1}
   .brand .cross{
     width:26px;height:26px;flex:0 0 auto;border-radius:8px;
-    background:linear-gradient(150deg,var(--olive),var(--olive-2));
+    background:linear-gradient(150deg,var(--blue),var(--blue-2));
     color:#fff;display:grid;place-items:center;font-size:14px;line-height:1;
   }
-  .brand b{font-size:15px;letter-spacing:-.01em;color:var(--olive);white-space:nowrap;font-weight:700}
+  .brand b{font-size:15px;letter-spacing:-.01em;color:var(--blue);white-space:nowrap;font-weight:700}
   .brand small{font-size:11px;color:var(--ink-faint);letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .bar-actions{display:flex;align-items:center;gap:6px;flex:0 0 auto}
   .icon-btn{
-    appearance:none;border:1px solid var(--line);background:#fff;color:var(--olive);
+    appearance:none;border:1px solid var(--line);background:#fff;color:var(--blue);
     font-family:var(--sans);font-size:12.5px;font-weight:600;cursor:pointer;
     border-radius:999px;padding:6px 11px;display:inline-flex;align-items:center;gap:5px;
     line-height:1.2;
   }
-  .icon-btn:hover{border-color:#C6CDB6}
-  .icon-btn .dot{width:5px;height:5px;border-radius:50%;background:var(--rose-2)}
+  .icon-btn:hover{border-color:#BFD2E8}
+  .icon-btn .dot{width:5px;height:5px;border-radius:50%;background:var(--gold-2)}
   .tabs{
     max-width:1160px;margin:0 auto;padding:0 12px 8px;
     display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;
@@ -89,10 +90,10 @@
     padding:6px 13px;border-radius:999px;border:1px solid transparent;white-space:nowrap;
     transition:.18s;
   }
-  .tabs a .rn{font-family:var(--serif);font-weight:600;color:var(--rose-2);margin-right:5px}
+  .tabs a .rn{font-family:var(--serif);font-weight:600;color:var(--gold-deep);margin-right:5px}
   .tabs a:hover{color:var(--ink);background:#fff}
-  .tabs a.on{background:var(--olive);color:#fff;border-color:var(--olive)}
-  .tabs a.on .rn{color:#F2D9DA}
+  .tabs a.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .tabs a.on .rn{color:#F7E8B0}
 
   /* settings panel */
   .panel{
@@ -105,7 +106,7 @@
   .panel-in{
     max-width:1128px;margin:0 auto;
     background:#fff;border:1px solid var(--line);border-radius:14px;
-    box-shadow:0 12px 30px rgba(74,88,56,.14);padding:13px 14px 12px;
+    box-shadow:0 12px 30px rgba(35,75,122,.16);padding:13px 14px 12px;
   }
   .p-row{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:9px}
   .p-row:last-child{margin-bottom:0}
@@ -115,56 +116,87 @@
     border:1px solid var(--line);background:#fff;color:var(--ink-soft);
     border-radius:999px;padding:5px 11px;transition:.16s;line-height:1.3;
   }
-  .chip:hover{border-color:#C6CDB6;color:var(--ink)}
-  .chip.on{background:var(--rose-soft);border-color:var(--rose);color:var(--rose-deep)}
-  .chip.on.olive{background:var(--olive);border-color:var(--olive);color:#fff}
+  .chip:hover{border-color:#BFD2E8;color:var(--ink)}
+  .chip.on{background:var(--gold-soft);border-color:var(--gold);color:var(--gold-deep)}
+  .chip.on.olive{background:var(--gold-2);border-color:var(--gold);color:#241C04}
+  .chip[aria-pressed="true"]::before{content:"✓";margin-right:4px;font-size:11px;line-height:1;opacity:.9}
+  .chip.lang-chip{min-width:86px}
+  .chip.lang-chip.on{background:var(--blue);border-color:var(--blue);color:#fff}
+  .p-hint{font-size:11.5px;color:var(--ink-faint);letter-spacing:.01em}
+
+  /* top-bar language toggles */
+  .lang-quick{
+    display:flex;align-items:center;gap:2px;padding:2px;
+    border:1px solid var(--line);background:#fff;border-radius:999px;flex:0 0 auto;
+  }
+  .lang-quick button{
+    appearance:none;border:0;background:transparent;cursor:pointer;font-family:var(--sans);
+    font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--ink-faint);
+    border-radius:999px;padding:4px 8px;line-height:1.25;min-width:31px;text-align:center;
+    transition:.16s;
+  }
+  .lang-quick button:hover{background:var(--line-soft);color:var(--ink)}
+  .lang-quick button[aria-pressed="true"]{background:var(--blue);color:#fff}
+  .lang-quick button:focus-visible{outline:2px solid var(--gold);outline-offset:1px}
+  .brand{overflow:hidden}
+
+  /* toast */
+  .toast{
+    position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);
+    background:#1B2735;color:#fff;font-size:12.5px;font-weight:600;letter-spacing:-.01em;
+    padding:9px 16px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.2);
+    opacity:0;pointer-events:none;transition:opacity .22s, transform .22s;z-index:80;
+    max-width:calc(100% - 32px);text-align:center;line-height:1.45;
+  }
+  .toast.show{opacity:1;transform:translate(-50%,0)}
 
   /* ---------------- PAGE ---------------- */
   .page{max-width:1160px;margin:0 auto;padding:calc(var(--hdr) + 18px) 16px 70px}
   .hero{
     position:relative;overflow:hidden;border-radius:22px;color:#fff;
-    background:linear-gradient(150deg,var(--olive) 0%, var(--olive-2) 58%, #6A7A53 100%);
-    padding:26px 24px 24px;box-shadow:0 16px 40px rgba(74,88,56,.18);margin-bottom:22px;
+    background:linear-gradient(150deg,#20466F 0%, var(--blue) 34%, var(--blue-2) 72%, #3A6CA6 100%);
+    padding:26px 24px 24px;box-shadow:0 16px 40px rgba(33,70,111,.24);margin-bottom:22px;
   }
   .hero::after{
     content:"";position:absolute;right:-120px;top:-140px;width:420px;height:420px;border-radius:50%;
-    background:radial-gradient(circle at 40% 40%, rgba(250,232,233,.10), rgba(250,232,233,0) 58%);
+    background:radial-gradient(circle at 40% 40%, rgba(247,232,176,.16), rgba(247,232,176,0) 60%);
     pointer-events:none;
   }
   .hero .eyebrow{
     display:inline-block;font-size:11px;letter-spacing:.14em;font-weight:700;
-    color:#F7D8DA;background:rgba(240,201,204,.16);border:1px solid rgba(240,201,204,.4);
+    color:#F7E8B0;background:rgba(247,232,176,.16);border:1px solid rgba(247,232,176,.45);
     border-radius:999px;padding:4px 11px;margin-bottom:12px;
   }
   .hero h1{
     font-family:var(--serif);font-weight:600;margin:0 0 4px;
     font-size:clamp(25px,4.2vw,36px);letter-spacing:-.01em;line-height:1.25;
   }
-  .hero .sub{font-size:13.5px;color:#E4E8D6;margin:0 0 14px;letter-spacing:.01em}
-  .hero .sub span{color:#F7D8DA}
+  .hero .sub{font-size:13.5px;color:#D7E3F3;margin:0 0 14px;letter-spacing:.01em}
+  .hero .sub span{color:#F7E8B0}
   .hero .hint{
-    display:flex;align-items:flex-start;gap:8px;font-size:12.8px;color:#EFF2E4;
-    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+    display:flex;align-items:flex-start;gap:8px;font-size:12.8px;color:#E9F0F9;
+    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
     border-radius:12px;padding:9px 12px;max-width:720px;line-height:1.55;
   }
-  .hero .hint b{color:#FBDCDE;font-weight:700}
+  .hero .hint b{color:#FBE7A6;font-weight:700}
+  .hero .eyebrow{color:#F7E8B0}
 
   /* section */
   .sec{margin:34px 0 0;scroll-margin-top:calc(var(--hdr) + 12px)}
   .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:6px}
   .sec-num{
     flex:0 0 auto;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
-    background:var(--rose-soft);color:var(--rose-deep);border:1px solid #EFD9DA;
+    background:var(--gold-soft);color:var(--gold-deep);border:1px solid #EEE0B4;
     font-family:var(--serif);font-size:17px;font-weight:600;
   }
-  .sec-head h2{margin:0;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--olive);letter-spacing:-.01em}
+  .sec-head h2{margin:0;font-family:var(--serif);font-size:22px;font-weight:600;color:var(--blue);letter-spacing:-.01em}
   .sec-head .alt{display:block;font-family:var(--sans);font-size:11.5px;font-weight:500;color:var(--ink-faint);letter-spacing:.03em;margin-top:1px}
   .sec-note{font-size:13px;color:var(--ink-soft);margin:6px 0 16px 50px}
 
   .sub{margin:22px 0 10px}
   .sub h3{
-    margin:0;font-size:15px;font-weight:700;color:var(--olive);
-    padding-left:10px;border-left:3px solid var(--rose-2);line-height:1.35;
+    margin:0;font-size:15px;font-weight:700;color:var(--blue);
+    padding-left:10px;border-left:3px solid var(--gold-2);line-height:1.35;
   }
   .sub h3 .alt{font-weight:500;color:var(--ink-faint);font-size:11.5px;margin-left:6px;letter-spacing:.02em}
 
@@ -178,10 +210,10 @@
   .item-head h4{margin:0;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:-.01em}
   .item-head .tr{font-family:var(--serif);font-size:12px;color:var(--ink-faint);font-style:italic}
   .rubric{
-    margin:5px 0 10px;font-size:12.4px;color:var(--olive-2);line-height:1.55;
-    background:var(--olive-soft);border-radius:8px;padding:6px 10px;display:inline-block;
+    margin:5px 0 10px;font-size:12.4px;color:#254E7C;line-height:1.55;
+    background:var(--blue-soft);border-radius:8px;padding:6px 10px;display:inline-block;
   }
-  .rubric::before{content:"✳ ";color:var(--rose-2);font-size:10px}
+  .rubric::before{content:"✳ ";color:var(--gold);font-size:10px}
 
   .langhead{
     display:grid;grid-template-columns:repeat(var(--langs),minmax(0,1fr));
@@ -190,53 +222,46 @@
   .langhead span{
     font-size:10.5px;letter-spacing:.12em;font-weight:700;color:var(--ink-faint);text-transform:uppercase;
   }
-  .langhead span.ko{color:#8A8E82}
-  .langhead span.en{color:#9A8A6A}
-  .langhead span.es{color:#A87C80}
+  .langhead span.ko{color:#6B7C92}
+  .langhead span.en{color:#8A6A1A}
+  .langhead span.es{color:var(--blue-2)}
 
   .line{
     display:grid;grid-template-columns:var(--role-w) minmax(0,1fr);gap:12px;
     padding:8px 10px 8px 8px;border-radius:10px;border-left:3px solid transparent;
   }
   .line + .line{margin-top:4px}
-  .line.a{background:var(--rose-soft);border-left-color:var(--rose-2)}
+  .line.a{background:var(--gold-soft);border-left-color:var(--gold-2)}
   .line.p{background:transparent;border-left-color:var(--line)}
   .role{
     font-size:11px;font-weight:700;letter-spacing:.02em;color:var(--ink-faint);
     display:flex;align-items:baseline;gap:4px;padding-top:3px;line-height:1.3;
   }
-  .role .k{font-size:9.5px;font-weight:700;color:#fff;background:var(--ink-faint);border-radius:4px;padding:1px 4px;letter-spacing:0}
-  .line.a .role{color:var(--rose-deep)}
-  .line.a .role .k{background:var(--rose-2)}
+  .role .k{font-size:9.5px;font-weight:700;color:#fff;background:var(--ink-soft);border-radius:4px;padding:1px 4px;letter-spacing:0}
+  .line.a .role{color:var(--gold-deep)}
+  .line.a .role .k{background:var(--gold-deep);color:var(--gold-soft)}
   .cells{display:grid;grid-template-columns:repeat(var(--langs),minmax(0,1fr));gap:16px;align-items:start}
   .cell{font-size:calc(1rem * var(--scale));line-height:1.75;color:var(--ink);min-width:0;overflow-wrap:anywhere}
   .cell.en,.cell.es{font-family:var(--serif);font-size:calc(1.01rem * var(--scale));line-height:1.72}
-  .cell.en{color:#3A3D33}
-  .cell.es{color:#3D3436}
+  .cell.en{color:#26313D}
+  .cell.es{color:#333A48}
   .cell .langtag{display:none}
   .cell em{font-style:italic;color:var(--ink-faint);font-size:.86em}
 
   .alts{margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
-  .alt-label{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--rose-2);margin:0 0 5px 8px;text-transform:uppercase}
+  .alt-label{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--gold-deep);margin:0 0 5px 8px;text-transform:uppercase}
 
-  /* language filters */
-  body.lang-ko .cell.en,body.lang-ko .cell.es,
-  body.lang-en .cell.ko,body.lang-en .cell.es,
-  body.lang-es .cell.ko,body.lang-es .cell.en,
-  body.lang-koen .cell.es,
-  body.lang-koes .cell.en{display:none}
-  body.lang-ko .langhead span.en,body.lang-ko .langhead span.es,
-  body.lang-en .langhead span.ko,body.lang-en .langhead span.es,
-  body.lang-es .langhead span.ko,body.lang-es .langhead span.en,
-  body.lang-koen .langhead span.es,
-  body.lang-koes .langhead span.en{display:none}
-  body.lang-ko,body.lang-en,body.lang-es{--langs:1}
-  body.lang-koen,body.lang-koes{--langs:2}
-  body.lang-all{--langs:3}
+  /* language filters — independent toggles, any 1–3 combination */
+  body:not([data-ko="on"]) .cell.ko,
+  body:not([data-en="on"]) .cell.en,
+  body:not([data-es="on"]) .cell.es{display:none}
+  body:not([data-ko="on"]) .langhead span.ko,
+  body:not([data-en="on"]) .langhead span.en,
+  body:not([data-es="on"]) .langhead span.es{display:none}
 
   /* highlight only the assembly */
   body.only-all .line.p{opacity:.26;filter:grayscale(.35)}
-  body.only-all .line.a{background:#F9E9E9;box-shadow:inset 0 0 0 1px #F0D3D5}
+  body.only-all .line.a{background:#FBEFC4;box-shadow:inset 0 0 0 1px #E7D598}
   body.only-all .line.a .cell{font-weight:500}
   body.only-all .rubric{opacity:.55}
 
@@ -245,9 +270,9 @@
     margin-top:40px;border-top:1px solid var(--line);padding-top:18px;
     display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;
   }
-  .foot h5{margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--olive);font-weight:700}
+  .foot h5{margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);font-weight:700}
   .foot p{margin:0 0 6px;font-size:12.4px;color:var(--ink-soft);line-height:1.6}
-  .foot a{font-size:12.2px;border-bottom:1px solid rgba(143,74,82,.3)}
+  .foot a{font-size:12.2px;border-bottom:1px solid rgba(184,146,46,.35)}
   .foot .fine{font-size:11.5px;color:var(--ink-faint);margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
 
   /* mobile */
@@ -267,19 +292,30 @@
       color:var(--ink-faint);background:var(--line-soft);border-radius:4px;padding:0 4px;margin-right:6px;
       vertical-align:2px;
     }
-    .line.a .cell .langtag{background:#F1DEE0;color:var(--rose-deep)}
+    .line.a .cell .langtag{background:#F4E4B6;color:var(--gold-deep)}
     .sec-head h2{font-size:19px}
     .sec-note{margin-left:0;font-size:12.5px}
     .brand small{display:none}
+    #fsBtn .fs-lbl{display:none}
+    .chip.lang-chip{min-width:0;flex:1 1 0}
+    .p-hint{flex:1 0 100%;margin-left:0}
     .tabs{gap:3px;padding:0 8px 8px}
     .tabs a{font-size:11.5px;padding:5px 8px;letter-spacing:-.01em}
     .tabs a .rn{font-size:10.5px;margin-right:3px}
   }
   @media (min-width:761px){
-    .cell.ko + .cell.en{border-left:1px solid var(--line-soft);padding-left:16px}
-    .cell.en + .cell.es{border-left:1px solid var(--line-soft);padding-left:16px}
+    body[data-ko="on"] .cell.en,
+    body[data-en="on"] .cell.es,
+    body[data-ko="on"]:not([data-en="on"]) .cell.es{
+      border-left:1px solid var(--line-soft);padding-left:16px;
+    }
   }
 
+  @media (max-width:640px){
+    .bar-in{flex-wrap:wrap;gap:6px 8px;padding-bottom:5px}
+    .lang-quick{order:3;flex:1 0 100%;justify-content:center}
+    .lang-quick button{flex:1 1 0;min-width:0;padding:5px 4px;font-size:11.5px}
+  }
   @media print{
     .bar,.hero .hint,.foot .fine{display:none}
     body{background:#fff;font-size:11pt}
@@ -288,11 +324,11 @@
     .hero .eyebrow{color:#000;border-color:#999;background:none}
     .hero .sub{color:#333}
     .item{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
-    .line.a{background:#F4F4F4 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .line.a{background:#FBF4DF !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
   }
 </style>
 </head>
-<body class="lang-all">
+<body data-ko="on" data-en="on" data-es="on">
 
 <header class="bar" id="bar">
   <div class="bar-in">
@@ -300,8 +336,13 @@
       <span class="cross">✝</span>
       <span><b>미사 통상문</b><br><small>Order of the Mass · Orden de la Misa</small></span>
     </div>
+    <div class="lang-quick" id="langQuick" role="group" aria-label="보는 언어 선택">
+      <button type="button" data-lang-toggle="ko" aria-pressed="true" aria-label="한국어 보기" title="한국어">한</button>
+      <button type="button" data-lang-toggle="en" aria-pressed="true" aria-label="English (영어) 보기" title="English">EN</button>
+      <button type="button" data-lang-toggle="es" aria-pressed="true" aria-label="Español (스페인어) 보기" title="Español">ES</button>
+    </div>
     <div class="bar-actions">
-      <button class="icon-btn" id="fsBtn" type="button" aria-label="글씨 크기 조절"><span style="font-size:13px">가</span><span style="font-size:10px;color:var(--ink-faint)">크기</span></button>
+      <button class="icon-btn" id="fsBtn" type="button" aria-label="글씨 크기 조절"><span style="font-size:13px">가</span><span class="fs-lbl" style="font-size:10px;color:var(--ink-faint)">크기</span></button>
       <button class="icon-btn" id="setBtn" type="button" aria-expanded="false" aria-controls="panel">
         <span class="dot"></span><span id="quickState">3개 언어 · 보통</span>
       </button>
@@ -317,12 +358,10 @@
     <div class="panel-in">
       <div class="p-row">
         <span class="p-label">언어 보기</span>
-        <button class="chip" data-lang="all" type="button">3개국어 전체</button>
-        <button class="chip" data-lang="koes" type="button">한국어 + 스페인어</button>
-        <button class="chip" data-lang="koen" type="button">한국어 + 영어</button>
-        <button class="chip" data-lang="es" type="button">스페인어만</button>
-        <button class="chip" data-lang="ko" type="button">한국어만</button>
-        <button class="chip" data-lang="en" type="button">영어만</button>
+        <button class="chip lang-chip" data-lang-toggle="ko" type="button" aria-pressed="true" aria-label="한국어 보기">한국어</button>
+        <button class="chip lang-chip" data-lang-toggle="en" type="button" aria-pressed="true" aria-label="English (영어) 보기">English</button>
+        <button class="chip lang-chip" data-lang-toggle="es" type="button" aria-pressed="true" aria-label="Español (스페인어) 보기">Español</button>
+        <span class="p-hint">원하는 언어를 자유롭게 켜고 끌 수 있어요 · 최소 1개는 켜 둡니다</span>
       </div>
       <div class="p-row">
         <span class="p-label">회중 응답</span>
@@ -345,7 +384,7 @@
     <p class="sub">한국어 · <span>English</span> · <span>Español</span> — 사제(P)와 회중(모두)의 몫을 나누어 대조했습니다.</p>
     <div class="hint">
       <span style="font-size:14px;line-height:1.4">✝</span>
-      <span>분홍 바탕의 <b>‘모두’</b> 줄이 회중이 함께 읽고 응답하는 부분입니다. 위의 <b>보기 설정</b>에서 언어를 바꾸거나 글씨를 키울 수 있어요.</span>
+      <span>분홍 바탕의 <b>‘모두’</b> 줄이 회중이 함께 읽고 응답하는 부분입니다. 위의 <b>한 · EN · ES</b> 버튼으로 원하는 언어를 하나씩 켜고 끌 수 있어요. <b>보기 설정</b>에서 글씨도 키울 수 있습니다.</span>
     </div>
   </section>
 
@@ -380,6 +419,7 @@
   </div>
 </main>
 
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script>
 /* ============================================================
    미사 통상문 데이터
@@ -891,32 +931,80 @@ document.getElementById('content').innerHTML = SECTIONS.map(sectionHTML).join(''
 /* ============================================================ view state */
 const FS_STEPS = [1, 1.14, 1.28];
 const FS_NAME = {1:'보통', '1.14':'크게', '1.28':'아주 크게'};
-const LANG_NAME = {all:'3개 언어', koes:'한+스', koen:'한+영', es:'스페인어만', ko:'한국어만', en:'영어만'};
+const LANGS = ['ko', 'en', 'es'];
+const LANG_FULL = {ko:'한국어', en:'English', es:'Español'};
+const LANG_NAME = {
+  ko:'한국어만', en:'영어만', es:'스페인어만',
+  'ko+en':'한+영', 'ko+es':'한+스', 'en+es':'영+스',
+  'ko+en+es':'3개 언어'
+};
+const LEGACY_LANG = {all:['ko','en','es'], ko:['ko'], en:['en'], es:['es'], koen:['ko','en'], koes:['ko','es']};
 const store = {
   read(){ try{ return JSON.parse(localStorage.getItem('massOrderView') || '{}'); }catch(e){ return {}; } },
   write(v){ try{ localStorage.setItem('massOrderView', JSON.stringify(v)); }catch(e){} }
 };
-const state = Object.assign({lang:'all', onlyAll:false, fs:1}, store.read());
+function normalizeLangs(v){
+  if (!v) return null;
+  const arr = Array.isArray(v) ? v : LANGS.filter(k => v[k]);
+  const picked = LANGS.filter(k => arr.indexOf(k) !== -1);
+  if (!picked.length) return null;
+  return LANGS.reduce((o, k) => (o[k] = picked.indexOf(k) !== -1, o), {});
+}
+const saved = store.read();
+const savedLangs = normalizeLangs(saved.langs)
+  || (typeof saved.lang === 'string' && LEGACY_LANG[saved.lang] ? normalizeLangs(LEGACY_LANG[saved.lang]) : null)
+  || {ko:true, en:true, es:true};
+const state = {
+  langs: savedLangs,
+  onlyAll: !!saved.onlyAll,
+  fs: FS_STEPS.indexOf(parseFloat(saved.fs)) !== -1 ? parseFloat(saved.fs) : 1
+};
+
+function activeLangs(){ return LANGS.filter(k => state.langs[k]); }
+
+let toastTimer = null;
+function toast(msg){
+  const el = document.getElementById('toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+}
 
 function apply(){
-  document.body.classList.remove('lang-all','lang-koes','lang-koen','lang-es','lang-ko','lang-en');
-  document.body.classList.add('lang-' + state.lang);
+  const on = activeLangs();
+  document.documentElement.style.setProperty('--langs', String(on.length));
+  LANGS.forEach(k => document.body.setAttribute('data-' + k, state.langs[k] ? 'on' : 'off'));
   document.body.classList.toggle('only-all', !!state.onlyAll);
   document.documentElement.style.setProperty('--scale', state.fs);
-  document.querySelectorAll('[data-lang]').forEach(b =>
-    b.classList.toggle('on', b.dataset.lang === state.lang));
+  document.querySelectorAll('[data-lang-toggle]').forEach(b => {
+    const isOn = !!state.langs[b.dataset.langToggle];
+    b.classList.toggle('on', isOn);
+    b.setAttribute('aria-pressed', isOn ? 'true' : 'false');
+  });
   document.querySelectorAll('[data-fs]').forEach(b =>
     b.classList.toggle('on', String(state.fs) === b.dataset.fs));
   document.getElementById('onlyAllBtn').setAttribute('aria-pressed', state.onlyAll ? 'true' : 'false');
   document.getElementById('onlyAllBtn').classList.toggle('on', !!state.onlyAll);
   document.getElementById('quickState').textContent =
-    LANG_NAME[state.lang] + ' · ' + (FS_NAME[state.fs] || FS_NAME[String(state.fs)] || '보통');
+    (LANG_NAME[on.join('+')] || '3개 언어') + ' · ' + (FS_NAME[state.fs] || FS_NAME[String(state.fs)] || '보통');
   store.write(state);
   syncHeaderHeight();
 }
 
-document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => {
-  state.lang = b.dataset.lang; apply();
+function toggleLang(k){
+  if (!LANGS.includes(k)) return;
+  if (state.langs[k] && activeLangs().length === 1){
+    toast('최소 한 개의 언어는 켜 두어야 합니다');
+    return;
+  }
+  state.langs[k] = !state.langs[k];
+  apply();
+}
+
+document.querySelectorAll('[data-lang-toggle]').forEach(b => b.addEventListener('click', () => {
+  toggleLang(b.dataset.langToggle);
 }));
 document.querySelectorAll('[data-fs]').forEach(b => b.addEventListener('click', () => {
   state.fs = parseFloat(b.dataset.fs); apply();
@@ -943,7 +1031,7 @@ document.addEventListener('click', (e) => {
   if (panel.classList.contains('open') && !panel.contains(e.target) && !setBtn.contains(e.target)) togglePanel(false);
 });
 panel.addEventListener('click', (e) => {
-  if (e.target.closest('button') && e.target.dataset.lang) togglePanel(false);
+  if (e.target.closest('[data-fs], #onlyAllBtn')) togglePanel(false);
 });
 
 /* header height -> scroll offset */
